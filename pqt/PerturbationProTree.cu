@@ -6010,7 +6010,7 @@ __global__ void rerankPlusVecKernelFast(float* _bestDist, uint* _bestIdx,
 
 			totalVec = 0;
 		}
-		syncthreads();
+		__syncthreads();
 
 		// loop over the best assigned bins
 		for (int bin = 0; (bin < nBins) && (totalVec < _maxVec); bin++) {
